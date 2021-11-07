@@ -1,0 +1,55 @@
+ 
+ use std::fs;
+ use std::io::{self,Read, Write};
+ use std::sync::mpsc;
+ use std::thread;
+ use std::time::Duration;
+ 
+ fn main() {
+ let  quiz_tsv_filename = "quiz.tsv":
+ let timeout = 6;
+ let mut quiz_file = fs::File::open(quiz_tsv_filename).unwrap();
+ let mut buf = String::new();
+ quiz_file.read_to_string(&mut buf).unwrap();
+ let total_questions = buf.lines().count();
+ let score = buf.lines().map(|line| {
+     let mut q_a = line.split('\t').map(|s| s.to_string());
+            let question = q_a.next().expect("No question found.");
+            let answer = q_a.next().expect("No answer found.");
+            (question, answer)
+        })
+		
+        .map(|(question, answer)| test_question(&question, &answer, timeout))
+        .take_while(|o| o.is_some())
+        .map(|o| o.unwrap())
+        .filter(|p| *p)
+        .count();
+
+    println!("Score: {} / {}", score, total_questions);
+}
+
+fn test_question(question: &str, answer: &str, timeout: u32) -> Option<bool> {
+    print!("{}", question);
+    io::stdout().flush().expect("Failed to flush the buffer");
+
+    
+    let (transmitter, receiver) = mpsc::channel();
+    thread::spawn(move || { 
+        let mut buffer = String::new();
+        io::stdin()
+            .read_line(&mut buffer)
+            .expect("Failed to read user input");
+        let buffer = buffer.trim().to_string();
+        transmitter.send(buffer).expect("Failed to send user input");
+    });
+    
+    receiver
+        .recv_timeout(Duration::new(timeout as u64, 0))
+		.or_else(|o| {
+			println!("\nYou ran out of time! :(");
+			Err(o)
+		})
+        .ok()
+        .map(|buffer| buffer == answer)
+   
+}
