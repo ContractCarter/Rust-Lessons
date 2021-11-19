@@ -1,7 +1,7 @@
 fn main() {
     enum IpAddrKind {
-       V4,
-       V6,
+         V4,
+         V6,
     }
 
     struct IpAddr {
