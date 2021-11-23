@@ -17,5 +17,5 @@ fn main() {
     let loopback = IpAddr {
         kind: IpAddrKind::V6,
         address: String::from("::1"),
-    };
+      };
 }
