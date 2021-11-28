@@ -11,7 +11,7 @@ fn main() {
         username: String::from("someusername123"),
         active: true,
         sign_in_count: 1,
-     };
+    };
 
     let user2 = User {
         active: user1.active,
