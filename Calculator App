@@ -2,7 +2,7 @@ use std::io::{stdin, stdout, Write};
 
 fn read(input: &mut String) {
 stdout().flush()
-    .expect("failed to flush");
+    .expect("failed to comprehend");
 stdin().read_line(input)
     .expect("failed to read");
 }
