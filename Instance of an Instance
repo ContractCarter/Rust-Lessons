@@ -6,7 +6,7 @@ struct User {
 }
 
 fn main() {
-    let user1 = User {
+   let user1 = User {
         email: String::from("someone@example.com"),
         username: String::from("someusername123"),
         active: true,
