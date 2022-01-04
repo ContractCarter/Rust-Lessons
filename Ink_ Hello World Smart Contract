@@ -1,0 +1,50 @@
+use ink_lang as ink;
+
+#[ink::contract]
+mod flipper {
+    /// The storage of the flipper contract.
+    #[ink(storage)]
+    pub struct Flipper {
+        /// The single `bool` value.
+        value: bool,
+    }
+
+    impl Flipper {
+        /// Instantiates a new Flipper contract and initializes
+        /// `value` to `init_value`.
+        #[ink(constructor)]
+        pub fn new(init_value: bool) -> Self {
+            Self {
+                value: init_value,
+            }
+        }
+
+        /// Flips `value` from `true` to `false` or vice versa.
+        #[ink(message)]
+        pub fn flip(&mut self) {
+            self.value = !self.value;
+        }
+
+        /// Returns the current state of `value`.
+        #[ink(message)]
+        pub fn get(&self) -> bool {
+            self.value
+        }
+    }
+
+    /// Simply execute `cargo test` in order to test your contract
+    /// using the below unit tests.
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+        use ink_lang as ink;
+
+        #[ink::test]
+        fn it_works() {
+            let mut flipper = Flipper::new(false);
+            assert_eq!(flipper.get(), false);
+            flipper.flip();
+            assert_eq!(flipper.get(), true);
+        }
+    }
+}
