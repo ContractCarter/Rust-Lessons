@@ -25,7 +25,7 @@ mod flipper {
             self.value = !self.value;
         }
 
-        /// Returns the current state of `value`.
+        /// Returns the current state of 'value'.
         #[ink(message)]
         pub fn get(&self) -> bool {
             self.value
