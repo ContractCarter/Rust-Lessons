@@ -6,7 +6,7 @@ fn main() {
 
     struct IpAddr {
         kind: IpAddrKind,
-        address: String,
+          address: String,
     }
 
     let home = IpAddr {
