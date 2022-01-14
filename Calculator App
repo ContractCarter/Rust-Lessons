@@ -7,7 +7,7 @@ stdin().read_line(input)
     .expect("failed to read");
 }
 
-fn main() {
+ fn main() {
     println!("welcome to Calculator App!");
     println!("-------");
     
