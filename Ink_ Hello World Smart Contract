@@ -2,9 +2,9 @@ use ink_lang as ink;
 
 #[ink::contract]
 mod flipper {
-    /// The storage of the flipper contract.
-    #[ink(storage)]
-    pub struct Flipper {
+     /// The storage of the flipper contract.
+     #[ink(storage)]
+     pub struct Flipper {
         /// The single `bool` value.
         value: bool,
     }
