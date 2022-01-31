@@ -35,7 +35,7 @@ mod flipper {
     /// Simply execute `cargo test` in order to test your contract
     /// using the below unit tests.
     #[cfg(test)]
-    mod tests {
+     mod tests {
         use super::*;
         use ink_lang as ink;
 
