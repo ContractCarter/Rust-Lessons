@@ -1,3 +1,6 @@
-fn main() {
-   let v: Vec<i32> = Vec::new();
-}
+let mut fruits = Vec::new();
+
+    fruits.push("Apple");
+    fruits.push("Banana");
+    fruits.push("Orange");
+    fruits.push("Kiwi");
