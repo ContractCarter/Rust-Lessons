@@ -1,5 +1,5 @@
- crate
-  └── front_of_house
+   crate
+   └── front_of_house
       ├── hosting
       │   ├── add_to_waitlist
       │   └── seat_at_table
