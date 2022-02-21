@@ -5,7 +5,7 @@ fn main() {
     }
 
     struct IpAddr {
-        kind: IpAddrKind,
+         kind: IpAddrKind,
         address: String,
     }
 
