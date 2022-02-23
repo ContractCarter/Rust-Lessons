@@ -1,9 +1,9 @@
-[package]
+ [package]
 
- name = "hello-world-cargo"
+  name = "hello-world-cargo"
 
- version = "0.01"
+  version = "0.01"
 
- authors = ["Domenic <domenic@example.com>"]
+  authors = ["Domenic <domenic@example.com>"]
 
- [dependencies]
+  [dependencies]
