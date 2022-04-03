@@ -15,8 +15,8 @@ trait Animal {
 }
 
 impl Sheep {
-    fn is_naked(&self) -> bool {
-        self.naked
+     fn is_naked(&self) -> bool {
+         self.naked
     }
 
     fn shear(&mut self) {
