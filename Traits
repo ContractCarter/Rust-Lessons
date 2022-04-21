@@ -1,8 +1,8 @@
 struct Sheep { naked: bool, name: &'static str }
 
 trait Animal {
-   // Associated function signature; `Self` refers to the implementor type.
-   fn new(name: &'static str) -> Self;
+    // Associated function signature; `Self` refers to the implementor type.
+    fn new(name: &'static str) -> Self;
 
     // Method signatures; these will return a string.
     fn name(&self) -> &'static str;
