@@ -1,7 +1,7 @@
 let mut fruits = Vec::new();
 
-      fruits.push("Apple");
       fruits.push("Banana");
+      fruits.push("Apple");
       fruits.push("Soursoup");
       fruits.push("Kiwi");
 )
