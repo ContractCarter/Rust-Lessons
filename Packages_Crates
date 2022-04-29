@@ -3,5 +3,5 @@ $ cargo new my-project
 $ ls my-project
 Cargo.toml
 src
-$ ls my-project/src
+$  ls my-project/src
 main.rs
